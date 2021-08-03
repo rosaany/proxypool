@@ -58,7 +58,8 @@ def get_count(num=None):
     g.proxies = g.redis.get_all(redis_key=REDIS_KEY, start=0, num=g.count, withscores=True)
     p = {}
     for proxy in g.proxies:
-        p[bytes_convert_string(proxy[0])] = str(proxy[1])  # for examples: (b'121.232.148.77:3256', 8.0)
+        is_bytes_proxy = proxy[0]  # for examples: (b'121.232.148.77:3256', 8.0)
+        p[bytes_convert_string(is_bytes_proxy)] = str(proxy[1])
     p = json.dumps(p)
     return jsonify(count=g.count, proxy=p)
 

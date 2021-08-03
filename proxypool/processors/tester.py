@@ -109,7 +109,6 @@ class Tester(object):
             # 从redis中迭代获取集合元素,其中COUNT参数是：每次批量测试代理的个数
             cursor, proxies = self.redis.batch(REDIS_KEY, cursor, COUNT)
             if proxies:
-                # 从redis取出来的value默认是python的bytes类型
                 tasks = [self.test(bytes_convert_string(proxy[0])) for proxy in
                          proxies]
                 self.loop.run_until_complete(asyncio.wait(tasks))
@@ -130,14 +129,4 @@ if __name__ == '__main__':
     tester = Tester()
     # tester.run()
     runtest()
-    # print(Logging.catch(tester.run()))
-    # loop = 0
-    # while True:
-    #     tester.run()
-    #     loop += 1
-    #     if loop == 20:
-    #         time.sleep(.5)
-    #         break
 
-    # runtest()
-    # print(socket.gethostbyname(socket.gethostname())) # get local ip

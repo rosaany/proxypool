@@ -27,7 +27,7 @@ class Base(object):
     """
     url = ""
     proxies = None
-    isvalid = True
+    isvalid = False
 
     def __init__(self):
         # 忽略安全警告

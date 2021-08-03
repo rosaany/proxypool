@@ -4,11 +4,9 @@ logging = Logging()
 
 
 def bytes_convert_string(data):
-    if data is None:
-        return None
-    elif isinstance(data, bytes):
+    if isinstance(data, bytes):
         return data.decode('utf8')
-
+    return data
 
 def is_valid_proxy(ip_port):
     if ip_port is None:
