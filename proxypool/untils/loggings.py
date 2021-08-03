@@ -2,8 +2,7 @@ import sys
 import time
 from loguru import logger
 from pathlib import Path
-from proxypool.setting import OPEN_LOG
-
+from proxypool.setting import OPEN_LOG, LEVEL
 
 
 class Logging(object):
@@ -52,7 +51,7 @@ class Logging(object):
             p = Path(present_path).resolve()
             log_path = p.joinpath('log')
             logger.add(f'{log_path}/crawl_{t}.log',
-                       level='ERROR',
+                       level=LEVEL,
                        enqueue=True,
                        rotation='00:00',
                        retention='1 months',

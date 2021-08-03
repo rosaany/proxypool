@@ -5,7 +5,7 @@ import platform
 ######################
 REDIS_HOST = '127.0.0.1'
 REDIS_PORT = '6379'
-REDIS_PASSWORD = 'Aa123456'
+REDIS_PASSWORD = ''
 REDIS_DB = '0'
 
 # redis ordered set
@@ -58,8 +58,9 @@ RUN_GETTER = True
 RUN_TESTER = True
 RUN_SERVER = True
 
-
 ###############################
 # 是否开启log
 ###############################
-OPEN_LOG = True
+OPEN_LOG = False
+# 日志级别（记录LEVEL级别以上）
+LEVEL = 'ERROR'
