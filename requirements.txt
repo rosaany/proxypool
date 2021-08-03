@@ -1,0 +1,10 @@
+Flask
+retrying
+aiohttp
+requests
+pyquery
+lxml
+redis
+loguru
+fake_headers
+supervisor
